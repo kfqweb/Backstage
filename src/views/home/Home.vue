@@ -1,12 +1,16 @@
 <template>
-  <el-container>
+  <el-container class="container">
     <el-header class="header">
       <Headers></Headers>
     </el-header>
     <el-container>
-      <el-aside width="200px" class="aside">Aside</el-aside>
+      <el-aside width="200px" class="aside">
+        <Aside></Aside>
+      </el-aside>
       <el-container>
-        <el-main class="main">Main</el-main>
+        <el-main class="main">
+          <router-view></router-view>
+        </el-main>
       </el-container>
     </el-container>
   </el-container>
@@ -14,6 +18,7 @@
 
 <script type='text/ecmascript-6'>
 import Headers from '@/components/Headers.vue'
+import Aside from '@/views/aside/Aside.vue'
 export default {
   beforeCreate() {
     // 判断是否登录，token
@@ -26,12 +31,11 @@ export default {
     }
   },
   data() {
-    return {
-
-    }
+    return {}
   },
   components: {
-    Headers
+    Headers,
+    Aside
   }
 }
 </script>
@@ -60,7 +64,11 @@ export default {
 .aside {
   background-color: #d3dce6;
 }
+.el-menu-vertical-demo {
+  height: 100%;
+}
 .main {
+  overflow: hidden;
   background-color: #e9eef3;
 }
 </style>

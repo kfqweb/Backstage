@@ -19,7 +19,8 @@
         prop="password">
         <el-input
           v-model="formData.password"
-          @blur="submitForm"></el-input>
+          @blur="submitForm"
+          @keyup.enter="submitForm"></el-input>
       </el-form-item>
       <el-row>
         <el-col :span="24">

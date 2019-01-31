@@ -14,6 +14,8 @@ Vue.prototype.axios = axios
 
 axios.defaults.baseURL = 'http://localhost:8888/api/private/v1'
 
+axios.defaults.headers.common['Authorization'] = window.sessionStorage.getItem('token')
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
